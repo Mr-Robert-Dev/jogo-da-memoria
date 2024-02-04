@@ -1,0 +1,85 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: blueviolet;
+}
+
+.container{
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(325deg, #000000 0%, #7927a9 30%, rgb(228, 87, 110) 70%, white 100%);
+    padding: 40px 60px;
+}
+
+h2{
+font-size: 3em;
+color: white;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+}
+
+.game{
+    display: flex;
+    flex-wrap: wrap;
+    width: 430px;
+    height: 430px;
+    gap:10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+.item{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 0.50s;
+}
+
+.item::after{
+    content: "";
+    background: #404040;
+    inset: 0;
+    transition: 0;
+    position: absolute;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+
+}
+
+.item.boxOpen{
+transform: rotateY(0deg);
+}
+
+.boxOpen::after{
+transform:rotateY(180deg)
+}
+.boxMacth::after{
+    transform:rotateY(180deg)
+    }
+button{
+    padding: 15px 20px ;
+    width: 100%;
+    color: #000000;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:focus{
+    color: rgb(223, 43, 73);
+    background: rgb(49, 13, 13);
+}
